@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Apollo, gql } from 'apollo-angular';
 import { Subscription } from 'rxjs';
+import { PostsService } from '../shared/posts.service';
 
 @Component({
   selector: 'app-post',
@@ -15,31 +15,18 @@ export class PostComponent implements OnInit, OnDestroy {
 
   private querySubscription: Subscription;
 
-  constructor(private route: ActivatedRoute, private apollo: Apollo) {}
+  constructor(
+    private route: ActivatedRoute,
+    private postsService: PostsService
+  ) {}
 
   ngOnInit(): void {
     this.paramMap$ = this.route.paramMap.subscribe((params: ParamMap) => {
       this.postId = params.get('postId');
 
-      this.querySubscription = this.apollo
-        .watchQuery<any>({
-          query: gql`
-            query BlogSampleQuery {
-              blogSample(where: { id: "${this.postId}" }) {
-                id
-                title
-                content {
-                  html
-                }
-                image {
-                  url
-                }
-                credits
-              }
-            }
-          `,
-        })
-        .valueChanges.subscribe(({ data, loading }) => {
+      this.querySubscription = this.postsService
+        .getPost(this.postId)
+        .subscribe(({ data, loading }) => {
           this.post = data.blogSample;
         });
     });

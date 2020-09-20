@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Apollo, gql } from 'apollo-angular';
 import { Subscription } from 'rxjs';
+import { PostsService } from '../shared/posts.service';
 
 @Component({
   selector: 'app-home',
@@ -12,21 +12,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   posts: any[] = [];
 
-  constructor(private apollo: Apollo) {}
+  constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.querySubscription = this.apollo
-      .watchQuery<any>({
-        query: gql`
-          query BlogSamplesQuery {
-            blogSamples {
-              id
-              title
-            }
-          }
-        `,
-      })
-      .valueChanges.subscribe(({ data, loading }) => {
+    this.querySubscription = this.postsService
+      .getPosts()
+      .subscribe(({ data, loading }) => {
         this.posts = data.blogSamples;
       });
   }
