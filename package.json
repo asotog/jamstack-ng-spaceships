@@ -21,9 +21,13 @@
     "@angular/platform-browser": "~10.1.0",
     "@angular/platform-browser-dynamic": "~10.1.0",
     "@angular/router": "~10.1.0",
+    "@apollo/client": "^3.0.0",
     "@scullyio/init": "^1.0.0",
     "@scullyio/ng-lib": "^1.0.0-beta.1",
     "@scullyio/scully": "^1.0.0-beta.5",
+    "apollo-angular": "^2.0.4",
+    "graphql": "^15.0.0",
+    "node-fetch": "^2.6.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
