@@ -1,1 +1,4 @@
-<p>post {{ postId }} works!</p>
+<div *ngIf="!!post">
+  <h1>{{ post.title }}</h1>
+  <div [innerHTML]="post.content.html"></div>
+</div>
