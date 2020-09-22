@@ -1,6 +1,13 @@
 # JamstackNgSpaceships
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Tech stack:
+- Angular
+- Scully.io (SSG for Angular)
+- Consuming data from GraphCMS
+- Apollo GraphQL client
+- GraphQL Code Generator
+- Hosted in Netlify
 
 ## Environment variables configuration
 
