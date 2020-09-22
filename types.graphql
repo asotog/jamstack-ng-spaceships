@@ -1,0 +1,20 @@
+query BlogSamples {
+  blogSamples {
+    id
+    title
+  }
+}
+
+query BlogSample($id: ID!) {
+  blogSample(where: { id: $id }) {
+    id
+    title
+    content {
+      html
+    }
+    image {
+      url
+    }
+    credits
+  }
+}

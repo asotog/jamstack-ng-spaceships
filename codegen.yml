@@ -1,0 +1,8 @@
+schema: ${GRAPHQL_API_URL}
+documents: "types.graphql"
+generates:
+  ./src/app/shared/graphql.gen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular
