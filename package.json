@@ -11,7 +11,8 @@
     "scully": "scully",
     "scully:serve": "scully serve",
     "env": "node env-task.js",
-    "generate": "graphql-codegen -r dotenv/config"
+    "generate": "graphql-codegen -r dotenv/config",
+    "ci": "npm run build && npm run scully -- --scanRoutes"
   },
   "private": true,
   "dependencies": {
