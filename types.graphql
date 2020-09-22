@@ -2,6 +2,7 @@ query BlogSamples {
   blogSamples {
     id
     title
+    createdAt
   }
 }
 
@@ -9,11 +10,12 @@ query BlogSample($id: ID!) {
   blogSample(where: { id: $id }) {
     id
     title
+    createdAt
     content {
       html
     }
     image {
-      url
+      url(transformation: { image: { resize: { width: 350 } } })
     }
     credits
   }

@@ -1,4 +1,11 @@
 <div *ngIf="!!post">
   <h1>{{ post.title }}</h1>
+  <a class="post-date d-block" [href]="post.credits">{{ post.credits }}</a>
+  <span class="post-date d-block mb-4">{{
+    post.createdAt | date: "fullDate"
+  }}</span>
   <div [innerHTML]="post.content.html"></div>
+  <div class="text-center my-5">
+    <img [src]="post.image.url" alt="Image of {{ post.title }}" />
+  </div>
 </div>
