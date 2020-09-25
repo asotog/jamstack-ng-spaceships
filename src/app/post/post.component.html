@@ -6,6 +6,10 @@
   }}</span>
   <div [innerHTML]="post.content.html"></div>
   <div class="text-center my-5">
-    <img [src]="post.image.url" alt="Image of {{ post.title }}" />
+    <img
+      class="mw-100"
+      [src]="post.image.url"
+      alt="Image of {{ post.title }}"
+    />
   </div>
 </div>
