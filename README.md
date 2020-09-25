@@ -1,6 +1,15 @@
 # JamstackNgSpaceships
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9dae8fa3-9dc1-4fba-bf9c-903bc44484ed/deploy-status)](https://app.netlify.com/sites/romantic-visvesvaraya-390ad0/deploys)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0.
+Tech stack:
+- Angular
+- Scully.io (Static Site Generator for Angular)
+- Consuming data from GraphCMS
+- Apollo GraphQL client
+- GraphQL Code Generator
+- Hosted in Netlify
 
 ## Environment variables configuration
 
