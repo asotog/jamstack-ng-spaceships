@@ -14,7 +14,7 @@ Tech stack:
 
 ## Environment variables configuration
 
-Duplicate `.env-sample` and rename it to `.env`, and modify the variables based on your setup
+Duplicate `.env-sample` and rename it to `.env`, and modify the variables based on your setup (in order to control variables from vercel, or netlify, or any other)
 
 ## Development server
 
